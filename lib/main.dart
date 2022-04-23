@@ -132,7 +132,7 @@ class PlusTwo extends StatelessWidget {
         backgroundColor: Colors.red,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.symmetric(horizontal:20),
         child: ListView.builder(
             itemCount: plusTwoStudents.length,
             itemBuilder: (context, index) => Padding(
