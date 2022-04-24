@@ -7,22 +7,22 @@ class BscCsit extends StatelessWidget {
     {
       "name": "Ram",
       "image":
-          "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
+          "images/ni_image.jpg"
     },
     {
       "name": "Mustafa Hawari",
       "image":
-          "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
+          "images/ni_image.jpg"
     },
     {
       "name": "Anish Husen",
       "image":
-          "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
+          "images/ni_image.jpg"
     },
     {
       "name": "Bikash Husen",
       "image":
-          "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
+          "images/ni_image.jpg"
     }
   ];
 
@@ -47,7 +47,7 @@ class BscCsit extends StatelessWidget {
                           height: 70,
                           decoration: BoxDecoration(
                               image: DecorationImage(
-                                image: NetworkImage(
+                                image: AssetImage(
                                   csitStudents[index]["image"],
                                 ),
 

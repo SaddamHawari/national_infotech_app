@@ -7,22 +7,22 @@ class Bca extends StatelessWidget {
     {
       "name": "Saddam Husen bca",
       "image":
-          "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
+          "images/ni_image.jpg"
     },
     {
       "name": "Mustafa Hawari bca",
       "image":
-          "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
+          "images/ni_image.jpg"
     },
     {
       "name": "Anish Husen bca",
       "image":
-          "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
+          "images/ni_image.jpg"
     },
     {
       "name": "Bikash Husen bca",
       "image":
-          "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
+          "images/ni_image.jpg"
     }
   ];
 
@@ -47,7 +47,7 @@ class Bca extends StatelessWidget {
                           height: 70,
                           decoration: BoxDecoration(
                               image: DecorationImage(
-                                image: NetworkImage(
+                                image: AssetImage(
                                   bcaStudent[index]["image"],
                                 ),
 
