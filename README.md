@@ -6,6 +6,11 @@ A new Flutter project.
 
 This project is a starting point for a Flutter application.
 
+Api url
+https://6264b68894374a2c50691837.mockapi.io/api/bca
+https://6264b68894374a2c50691837.mockapi.io/api/csit
+https://6264b68894374a2c50691837.mockapi.io/api/plusTwo
+
 A few resources to get you started if this is your first Flutter project:
 
 - [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
