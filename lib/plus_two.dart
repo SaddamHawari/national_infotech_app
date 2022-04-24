@@ -1,30 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:national_infotech/models/student_info_model.dart';
+import 'package:national_infotech/network/services.dart';
 
-class PlusTwo extends StatelessWidget {
+class PlusTwo extends StatefulWidget {
   PlusTwo({Key? key}) : super(key: key);
 
-  final List plusTwoStudents = [
-    {
-      "name": "Saddam Husen",
-      "image":
-          "images/ni_image.jpg"
-    },
-    {
-      "name": "Mustafa Hawari",
-      "image":
-          "images/ni_image.jpg"
-    },
-    {
-      "name": "Anish Husen",
-      "image":
-          "images/ni_image.jpg"
-    },
-    {
-      "name": "Bikash Husen",
-      "image":
-          "images/ni_image.jpg"
-    }
-  ];
+  @override
+  State<PlusTwo> createState() => _PlusTwoState();
+}
+
+class _PlusTwoState extends State<PlusTwo> {
+  List<StudentInfoModel> students = [];
+  bool isLoading = true;
+  
+
+  @override
+  void initState() {
+    super.initState();
+    ApiCaller.getDataFromApi("plusTwo").then((value) {
+      if(value.isNotEmpty) {
+        setState(() {
+          
+        students = value;
+        isLoading = false;
+        });
+        print(students);
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,10 +37,10 @@ class PlusTwo extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.red,
       ),
-      body: Padding(
+      body: isLoading? Center(child: CircularProgressIndicator(),): Padding(
         padding: const EdgeInsets.all(20),
         child: ListView.builder(
-            itemCount: plusTwoStudents.length,
+            itemCount: students.length,
             itemBuilder: (context, index) => Padding(
               padding: const EdgeInsets.only(bottom: 10),
               child: Row(
@@ -47,8 +50,8 @@ class PlusTwo extends StatelessWidget {
                           height: 70,
                           decoration: BoxDecoration(
                               image: DecorationImage(
-                                image: AssetImage(
-                                  plusTwoStudents[index]["image"],
+                                image: NetworkImage(
+                                  students[index].image!,
                                 ),
 
                               fit: BoxFit.cover
@@ -58,7 +61,7 @@ class PlusTwo extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(left: 10),
                         child: Text(
-                          plusTwoStudents[index]["name"],
+                          students[index].name!,
                           style: TextStyle(
                               fontSize: 18, fontWeight: FontWeight.bold),
                         ),

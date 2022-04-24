@@ -4,7 +4,7 @@ import 'package:national_infotech/models/student_info_model.dart';
 import 'package:http/http.dart' as http;
 
 class ApiCaller {
-  Future<List<StudentInfoModel>> getDataFromApi(String apiName) async {
+  static Future<List<StudentInfoModel>> getDataFromApi(String apiName) async {
     List<StudentInfoModel> students = [];
     try {
       var url =
@@ -12,8 +12,10 @@ class ApiCaller {
       http.Response response = await http.get(url);
       if(response.statusCode == 200) {
         List decodedData = jsonDecode(response.body);
+        print(decodedData);
         students = decodedData.map((e) =>StudentInfoModel.fromJson(e)).toList();
         return students;
+
       }
     } catch (e) {
       print(e);
